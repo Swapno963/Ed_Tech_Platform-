@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# E-Learning Platform
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This is a platform where instructors can create courses with multiple modules and quizzes. Students can enroll in these courses and, upon completion, download a certificate. Additionally, the platform features a dashboard where students can track their progress and instructors can view data related to course enrollments.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### email:swapno@gmail.com password:12
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Live site : https://lwskart-nine.vercel.app/en
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### User Authentication
 
-## Learn More
+- Implemented using access tokens and refresh tokens.
+- Secure login and registration functionality.
 
-To learn more about Next.js, take a look at the following resources:
+### Home Page
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Custom home page based on the provided template.
+- Displays 'SHOP BY CATEGORY', 'Trending Products', and 'TOP NEW ARRIVAL' sections with data fetched from the database.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Product Details
 
-## Deploy on Vercel
+- Clicking on a product shows its detailed information fetched from the database.
+- The "Related Products" section shows items based on keywords, tags, or categories.
+- Share functionality to social media.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Cart and Wishlist
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- The "Add to Cart" and "Add to Wishlist" buttons increase the count in the navbar.
+- Buttons redirect to respective pages with proper data.
+- Functionality is available only when the user is logged in.
+- Redirects to login page if the user is not logged in, and retains the intended action post-login.
+
+### Search and Filter
+
+- Search feature displays results in a professional way.
+- Filter products by categories, price, and size on product listing and search results pages.
+
+### User Account
+
+- Account page displays and allows updates to "Personal Profile", "Shipping Address", and "Billing Address".
+- These pages are private routes, accessible only when the user is logged in.
+
+### Checkout
+
+- Displays items in the cart and includes a checkout form with validation.
+- On successful order placement, a success message is shown, and an invoice can be downloaded.
+
+### Order Management
+
+- Generates and emails a PDF invoice after order completion.
+- Uses `PDF-LIB` for PDF generation.
+
+### Inventory Management
+
+- Manages product stock, showing "Stock Out" when a product is unavailable.
+
+### Internationalization
+
+- Supports Bengali and English languages.
+
+### SEO
+
+The home page and product details pages are SEO-friendly
+
+## Installation
+
+1. Clone the repository:
+
+   ```sh
+   git clone https://github.com/Swapno963/lwskart.git
+   cd lwskart
+   ```
+
+2. Install dependencies:
+
+   ```sh
+   npm install
+   ```
+
+3. Create a `.env` file for environment variables:
+
+4. Run the development server:
+   ```sh
+   npm run dev
+   ```
+
+## Usage
+
+- Access the application at `http://localhost:3000`
+- Register a new user or login with existing credentials.
+- Browse products, add to cart or wishlist, and complete orders.
+- Update personal information and view order history in the account section.
+
+## Technologies Used
+
+- **Next.js**: Framework for server-rendered React applications.
+- **React**: JavaScript library for building user interfaces.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **Node.js**: JavaScript runtime for server-side code.
+- **MongoDB**: Database for storing product and user data.
+- **JWT**: JSON Web Tokens for authentication.
+- **PDF-LIB**: Library for PDF generation.
+- **Nodemailer**: For sending emails.
